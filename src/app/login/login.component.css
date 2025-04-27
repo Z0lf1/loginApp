@@ -1,0 +1,30 @@
+.login-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  .titulo{
+    font: bold;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .full-width {
+    width: 100%;
+  }
+
+ .wrapperBotonesPreCarga{
+  display:flex;
+  justify-content: space-evenly;
+ } 
+
+ .botonPreCarga{
+  width: 5rem;
+  background-color: #2be22e;
+  color: aquamarine;
+  border: 2px solid chocolate;
+ }

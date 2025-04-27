@@ -1,0 +1,82 @@
+<div>
+  <h1 class="titulo"
+  >AppLogin</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')"
+        >El email es obligatorio</mat-error
+      >
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')"
+        >Formato inválido</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password" />
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')"
+        >La contraseña es obligatoria</mat-error
+      >
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="loginForm.invalid"
+    >
+      Iniciar sesión
+    </button>
+    
+    <button 
+    mat-raised-button
+    color="primary"
+    type="submit"
+    routerLink="/register"
+    >
+    Registrarse
+    </button>
+
+
+  </form>
+
+  <div class="wrapperBotonesPreCarga">
+    <button
+    id="botonPreCargaJuan"
+    mat-fab
+    color="primary"
+    type="button"
+    class="botonPreCarga"
+    (click)="onClickPrecarga('Juan')"
+
+    >
+    Juan
+    </button>
+    
+    <button
+    id="botonPreCargaLaura"
+    mat-fab
+    color="primary"
+    type="button"
+    class="botonPreCarga"
+    (click)="onClickPrecarga('Laura')"
+    >
+    Laura
+    </button>
+
+    <button
+    id="botonPreCargaRogelio"
+    mat-fab
+    color="primary"
+    type="button"
+    class="botonPreCarga"
+    (click)="onClickPrecarga('Rogelio')"
+
+    >
+    Rogelio
+    </button>
+  </div>
+
+</div>
