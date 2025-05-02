@@ -35,12 +35,17 @@ export class LoginComponent {
     });
   }
 
-  onSubmit(): void {
+  async onSubmit(){
     if (this.loginForm.valid) {
       const {email,password}=this.loginForm.value;
       console.log(email,password);
-      this.usuarioService.login(email,password)
-     }
+      const respuesta=await this.usuarioService.login(email,password);
+      
+      if(respuesta.ok){
+        this.router.navigate(['/home']);
+      }
+
+      }
   }
   irARegistro(): void {
     this.router.navigate(['/register']);
